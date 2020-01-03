@@ -2,7 +2,7 @@ require 'pry'
 require 'yaml'
 
 def load_library(file_path)
-  lib = YAML.load_file( file_path )
+  lib = YAML.load_file(file_path)
   emoticon_data = { "get_meaning" => {}, "get_emoticon" => {} }
 
   lib.each_pair { |emotion, face_array|
@@ -13,8 +13,8 @@ def load_library(file_path)
   emoticon_data
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file_path,emoticon)
+  lib = load_library(file_path)
 end
 
 def get_english_meaning
