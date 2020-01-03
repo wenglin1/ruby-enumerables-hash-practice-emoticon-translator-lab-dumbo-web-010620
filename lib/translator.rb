@@ -13,8 +13,14 @@ def load_library(file_path)
   emoticon_data
 end
 
-def get_japanese_emoticon(file_path,emoticon)
+def get_japanese_emoticon(file_path,emoticons)
   lib = load_library(file_path)
+  lib["get_emoticon"].each_pair {|emoticon, meaning|
+    if emoticon == emoticons
+      return meaning
+    end
+  }
+  "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning
